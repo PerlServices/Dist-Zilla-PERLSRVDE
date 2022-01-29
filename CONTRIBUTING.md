@@ -5,7 +5,7 @@ The distribution is contained in a Git repository, so simply clone the
 repository
 
 ```
-$ git clone https://github.com/perlservices/@PERLSRVDE/issues.git
+$ git clone https://github.com/perlservices/Dist-Zilla-PERLSRVDE/issues.git
 ```
 
 and change into the newly-created directory.

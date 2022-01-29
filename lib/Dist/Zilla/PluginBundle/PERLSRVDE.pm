@@ -14,6 +14,7 @@ use namespace::autoclean;
 use Dist::Zilla 6.0;
 
 use Dist::Zilla::PluginBundle::Git;
+use Dist::Zilla::PluginBundle::Basic;
 use Dist::Zilla::PluginBundle::Filter ();
 
 use Dist::Zilla::Plugin::ContributorsFile;
@@ -32,7 +33,6 @@ use Dist::Zilla::Plugin::ExecDir;
 use Dist::Zilla::Plugin::MetaJSON;
 use Dist::Zilla::Plugin::MetaProvides::Package;
 use Dist::Zilla::Plugin::ReadmeAnyFromPod;
-use Dist::Zilla::Plugin::ReadmeMarkdownFromPod;
 use Dist::Zilla::Plugin::ReadmeAddDevInfo;
 use Dist::Zilla::Plugin::GitHubREADME::Badge;
 use Dist::Zilla::Plugin::MetaResources;
@@ -65,23 +65,13 @@ has 'repository_type' => (
     },
 );
 
-has 'repository_group' => (
+has 'repository_path' => (
     is  => 'ro',
     isa => 'Str',
     lazy    => 1,
     default => sub {
         my $pl = $_[0]->payload;
-        exists $pl->{repository_group} ? $pl->{repository_group} : '';
-    },
-);
-
-has 'repository_name' => (
-    is  => 'ro',
-    isa => 'Str',
-    lazy    => 1,
-    default => sub {
-        my $pl = $_[0]->payload;
-        exists $pl->{repository_name} ? $pl->{repository_name} : '';
+        exists $pl->{repository_path} ? $pl->{repository_path} : '';
     },
 );
 
@@ -193,26 +183,22 @@ sub configure {
     if ( $self->is_cpan ) {
         $self->add_plugins(
             [
-                'ReadmeMarkdownFromPod' => {
+                'ReadmeAnyFromPod' => 'GfmInRoot' => {
                     phase    => 'build',
-                    type     => 'markdown',
-                    location => 'root',
                 },
             ],
             [
-                'ReadmeAnyFromPod' => {
+                'ReadmeAnyFromPod' => 'TextInBuild' => {
                     phase    => 'build',
-                    type     => 'text',
-                    location => 'build',
                 },
             ],
-#            [
-#                'ReadmeAddDevInfo' => {
-#                    phase                 => 'build',
-#                    before                => '# AUTHOR',
-#                    add_contribution_file => 1,
-#                },
-#            ],
+            [
+                'ReadmeAddDevInfo' => {
+                    phase                 => 'build',
+                    before                => '# AUTHOR',
+                    add_contribution_file => 1,
+                },
+            ],
             [
                 'GitHubREADME::Badge' => {
                     badges => [ qw/cpants issues cpancover/ ],
@@ -233,30 +219,25 @@ sub _meta_resources {
 
     my $type = $self->repository_type;
 
-print STDERR "TYPE: $type\n";
-
     return if !$type && !%meta_resources;
 
-    my $name = $self->repository_name || $self->name;
+    my $name = $self->repository_path;
 
     if ( $type eq 'github' ) {
         $meta_resources{'homepage'} =
         $meta_resources{'repository.web'} =
-            sprintf "https://github.com/%s/%s",
-                $self->repository_group,
+            sprintf "https://github.com/%s",
                 $name
         ;
         $meta_resources{'repository.url'} =
-            sprintf "git://github.com/%s/%s.git",
-                $self->repository_group,
+            sprintf "git://github.com/%s.git",
                 $name
         ;
         $meta_resources{'repository.type'} = 'git';
 
         if ( !$self->bugtracker ) {
             $meta_resources{'repository.url'} =
-                sprintf "https://github.com/%s/%s/issues",
-                    $self->repository_group,
+                sprintf "https://github.com/%s/issues",
                     $name
             ;
         }
@@ -264,21 +245,18 @@ print STDERR "TYPE: $type\n";
     elsif ( $type eq 'gitlab' ) {
         $meta_resources{'homepage'} =
         $meta_resources{'repository.web'} =
-            sprintf "https://gitlab.com/%s/%s",
-                $self->repository_group,
+            sprintf "https://gitlab.com/%s",
                 $name
         ;
         $meta_resources{'repository.url'} =
-            sprintf "git://gitlab.com/%s/%s.git",
-                $self->repository_group,
+            sprintf "git://gitlab.com/%s.git",
                 $name
         ;
         $meta_resources{'repository.type'} = 'git';
 
         if ( !$self->bugtracker ) {
             $meta_resources{'repository.url'} =
-                sprintf "https://gitlab.com/%s/%s/-/issues",
-                    $self->repository_group,
+                sprintf "https://gitlab.com/%s/-/issues",
                     $name
             ;
         }
@@ -381,7 +359,7 @@ These options can be used:
 
 =item * repository_type
 
-=item * repository_group
+=item * repository_path
 
 =item * internal_type
 

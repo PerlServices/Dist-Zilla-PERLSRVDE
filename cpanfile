@@ -17,7 +17,6 @@ requires "Dist::Zilla::Plugin::PodSyntaxTests" => "0";
 requires "Dist::Zilla::Plugin::PodWeaver" => "0";
 requires "Dist::Zilla::Plugin::ReadmeAddDevInfo" => "0";
 requires "Dist::Zilla::Plugin::ReadmeAnyFromPod" => "0";
-requires "Dist::Zilla::Plugin::ReadmeMarkdownFromPod" => "0";
 requires "Dist::Zilla::Plugin::SyncCPANfile" => "0";
 requires "Dist::Zilla::Plugin::Test::NoBOM" => "0";
 requires "Dist::Zilla::Plugin::Test::NoTabs" => "0";
