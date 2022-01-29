@@ -121,6 +121,9 @@ has 'fake_release' => (
     lazy    => 1,
     default => sub {
         my $pl = $_[0]->payload;
+        if ( $pl->{is_cpan} ) {
+            $pl->{fake_release} = 0;
+        }
         exists $pl->{fake_release} ? $pl->{fake_release} : 1;
     },
 );
