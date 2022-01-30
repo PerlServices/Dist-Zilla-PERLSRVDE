@@ -21,6 +21,7 @@ requires "Dist::Zilla::Plugin::SyncCPANfile" => "0";
 requires "Dist::Zilla::Plugin::Test::NoBOM" => "0";
 requires "Dist::Zilla::Plugin::Test::NoTabs" => "0";
 requires "Dist::Zilla::Plugin::Test::Perl::Critic" => "0";
+requires "Dist::Zilla::PluginBundle::Git" => "0";
 requires "perl" => "5.020";
 
 on 'configure' => sub {

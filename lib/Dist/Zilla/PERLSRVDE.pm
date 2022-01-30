@@ -1,5 +1,7 @@
 package Dist::Zilla::PERLSRVDE;
 
+# ABSTRACT: A dummy module for this namespace
+
 use strict;
 use warnings;
 
