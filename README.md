@@ -1,6 +1,6 @@
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE.png)](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE)
 [![GitHub issues](https://img.shields.io/github/issues/Dist-Zilla-PERLSRVDE/issues.svg)](https://github.com/Dist-Zilla-PERLSRVDE/issues/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.2)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.2)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.3)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.3)
 
 # NAME
 
@@ -8,7 +8,7 @@ Dist::Zilla::PERLSRVDE - A dummy module for this namespace
 
 # VERSION
 
-version 0.0.2
+version 0.0.3
 
 # DESCRIPTION
 
