@@ -1,6 +1,7 @@
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE.png)](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE)
-[![GitHub issues](https://img.shields.io/github/issues/Dist-Zilla-PERLSRVDE/issues.svg)](https://github.com/Dist-Zilla-PERLSRVDE/issues/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.3)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-0.0.3)
+[![GitHub issues](https://img.shields.io/github/issues/perlservices/Dist-Zilla-PERLSRVDE.svg)](https://github.com/perlservices/Dist-Zilla-PERLSRVDE/issues)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.0)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.0)
+[![Cpan license](https://img.shields.io/cpan/l/Dist-Zilla-PERLSRVDE.svg)](https://metacpan.org/release/Dist-Zilla-PERLSRVDE)
 
 # NAME
 
@@ -8,7 +9,7 @@ Dist::Zilla::PERLSRVDE - A dummy module for this namespace
 
 # VERSION
 
-version 0.0.3
+version 1.0.0
 
 # DESCRIPTION
 
@@ -30,13 +31,13 @@ The distribution is contained in a Git repository, so simply clone the
 repository
 
 ```
-$ git clone https://github.com/perlservices/Dist-Zilla-PERLSRVDE/issues.git
+$ git clone git://github.com/perlservices/Dist-Zilla-PERLSRVDE.git
 ```
 
 and change into the newly-created directory.
 
 ```
-$ cd issues
+$ cd Dist-Zilla-PERLSRVDE
 ```
 
 The project uses [`Dist::Zilla`](https://metacpan.org/pod/Dist::Zilla) to
