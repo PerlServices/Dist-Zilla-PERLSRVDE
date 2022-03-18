@@ -204,7 +204,7 @@ sub configure {
             ],
             [
                 'GitHubREADME::Badge' => {
-                    badges => [ qw/cpants issues cpancover/ ],
+                    badges => [ qw/cpants issues cpancover license/ ],
                     phase  => 'build',
                     place  => 'top',
                 },
@@ -239,7 +239,7 @@ sub _meta_resources {
         $meta_resources{'repository.type'} = 'git';
 
         if ( !$self->bugtracker ) {
-            $meta_resources{'repository.url'} =
+            $meta_resources{'bugtracker.web'} =
                 sprintf "https://github.com/%s/issues",
                     $name
             ;
@@ -258,7 +258,7 @@ sub _meta_resources {
         $meta_resources{'repository.type'} = 'git';
 
         if ( !$self->bugtracker ) {
-            $meta_resources{'repository.url'} =
+            $meta_resources{'bugtracker.web'} =
                 sprintf "https://gitlab.com/%s/-/issues",
                     $name
             ;
