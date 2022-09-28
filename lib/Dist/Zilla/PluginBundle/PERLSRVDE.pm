@@ -313,7 +313,7 @@ Using L</Options>:
 
 =head1 DESCRIPTION
 
-This is a L<Dist::Zilla> PluginBundle. It lists the plugins we use at L<https://perl-services.de|Perl-Services.de>.
+This is a L<Dist::Zilla> PluginBundle. It lists the plugins we use at L<Perl-Services.de|https://perl-services.de>.
 It is roughly equivalent to the following dist.ini:
 
     [ContributorsFile]
