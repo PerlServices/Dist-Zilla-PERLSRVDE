@@ -1,6 +1,6 @@
 [![Kwalitee status](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE.png)](https://cpants.cpanauthors.org/dist/Dist-Zilla-PERLSRVDE)
 [![GitHub issues](https://img.shields.io/github/issues/perlservices/Dist-Zilla-PERLSRVDE.svg)](https://github.com/perlservices/Dist-Zilla-PERLSRVDE/issues)
-[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.0)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.0)
+[![CPAN Cover Status](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.1)](https://cpancoverbadge.perl-services.de/Dist-Zilla-PERLSRVDE-1.0.1)
 [![Cpan license](https://img.shields.io/cpan/l/Dist-Zilla-PERLSRVDE.svg)](https://metacpan.org/release/Dist-Zilla-PERLSRVDE)
 
 # NAME
@@ -9,18 +9,18 @@ Dist::Zilla::PERLSRVDE - A dummy module for this namespace
 
 # VERSION
 
-version 1.0.0
+version 1.0.1
 
 # DESCRIPTION
 
 This is a collection of [Dist::Zilla](https://metacpan.org/pod/Dist%3A%3AZilla) related modules
-used at [https://perl-services.de|Perl-Services.de](https://perl-services.de|Perl-Services.de).
+used at [Perl-Services.de](https://perl-services.de).
 
 # MODULES
 
 ## Dist::Zilla::PluginBundle::PERLSRVDE
 
-This is the [Dist::Zilla::PluginBundle::PERLSRVDE](https://metacpan.org/pod/PluginBundle)
+This is the [PluginBundle](https://metacpan.org/pod/Dist%3A%3AZilla%3A%3APluginBundle%3A%3APERLSRVDE)
 to include the Plugins we usually use.
 
 
