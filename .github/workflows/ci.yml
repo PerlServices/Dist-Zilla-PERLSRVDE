@@ -36,7 +36,7 @@ jobs:
     - name: Install Modules
       run: |
         dzil authordeps --missing | cpanm --notest
-        cpanm Test::BOM
+        cpanm Test::BOM Test::NoTabs Test::Pod::Coverage Test::Pod
 
     - name: Run tests
       run: |
