@@ -176,7 +176,10 @@ has exclude_from_basic => (
     lazy    => 1,
     default => sub {
         my $pl = $_[0]->payload;
-        $pl->{exclude_from_basic};
+        my $exclude = $pl->{exclude_from_basic};
+        $exclude ?
+            ref $exclude ? $exclude : [ $exclude ]
+            : []
     },
 );
 
